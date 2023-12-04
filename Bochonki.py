@@ -25,10 +25,12 @@ def user_interaction():
             N = int(input("Введите количество бочонков в мешке: "))
             if N < 1:
                 print("Некорректный ввод. Количество бочонков должно быть больше 0.")
+                logging.error(f"! Ошибка! Некорректный ввод: {N}")
             else:
                 return N
         except ValueError:
             print("! Ошибка ! Пожалуйста, введите натуральное число.")
+            logging.error(f"! Ошибка! Некорректный ввод: {N}")
 
 def main():
     N = user_interaction()
